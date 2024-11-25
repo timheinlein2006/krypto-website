@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krypto-Börsenkurse: Bitcoin & Solana</title>
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <style>
+        /* Allgemeines Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #c9d1d9;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #1e1e1e;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #58a6ff;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .chart {
+            width: 90%;
+            max-width: 800px;
+            height: 500px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #1e1e1e;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Krypto-Börsenkurse</h1>
+        <p>Live-Trading für Bitcoin und Solana</p>
+    </header>
+
+    <!-- Charts -->
+    <div class="container">
+        <div class="chart" id="bitcoin-chart"></div>
+        <div class="chart" id="solana-chart"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Powered by ❤️ and <a href="https://www.tradingview.com/" target="_blank">TradingView</a></p>
+    </footer>
+
+    <script>
+        // TradingView Widget für Bitcoin (dunkles Thema)
+        new TradingView.widget({
+            container_id: "bitcoin-chart",
+            autosize: true,
+            symbol: "BINANCE:BTCUSDT",
+            interval: "D",
+            timezone: "Etc/UTC",
+            theme: "dark",
+            style: "1",
+            locale: "en",
+            toolbar_bg: "#121212",
+            hide_side_toolbar: false,
+            enable_publishing: false,
+        });
+
+        // TradingView Widget für Solana (dunkles Thema)
+        new TradingView.widget({
+            container_id: "solana-chart",
+            autosize: true,
+            symbol: "BINANCE:SOLUSDT",
+            interval: "D",
+            timezone: "Etc/UTC",
+            theme: "dark",
+            style: "1",
+            locale: "en",
+            toolbar_bg: "#121212",
+            hide_side_toolbar: false,
+            enable_publishing: false,
+        });
+    </script>
+</body>
+</html>
